@@ -1,0 +1,10 @@
+insert into team (id, name, conference_id) values(2363, "Manhattan", 13);
+insert into team (id, name, conference_id) values(2217, "Fairfield", 13);
+insert into team (id, name, conference_id) values(2561, "Siena", 13);
+insert into team (id, name, conference_id) values(315, "Niagara", 13);
+insert into team (id, name, conference_id) values(314, "Iona", 13);
+insert into team (id, name, conference_id) values(2368, "Marist", 13);
+insert into team (id, name, conference_id) values(2520, "Rider", 13);
+insert into team (id, name, conference_id) values(2099, "Canisius", 13);
+insert into team (id, name, conference_id) values(2612, "St. Peter's", 13);
+insert into team (id, name, conference_id) values(2352, "Loyola MD", 13);

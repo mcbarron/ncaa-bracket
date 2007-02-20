@@ -1,0 +1,57 @@
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2046">Austin Peay</a></td>
+<td class="verb10">13</td>
+<td class="verb10">3</td>
+<td class="verb10">23</td>
+<td class="verb10">7</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2413">Morehead State</a></td>
+<td class="verb10">13</td>
+<td class="verb10">3</td>
+<td class="verb10">20</td>
+<td class="verb10">9</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2635">Tennessee Tech</a></td>
+<td class="verb10">11</td>
+<td class="verb10">5</td>
+<td class="verb10">20</td>
+<td class="verb10">12</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=093">Murray State</a></td>
+<td class="verb10">9</td>
+<td class="verb10">7</td>
+<td class="verb10">17</td>
+<td class="verb10">12</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2197">Eastern Illinois</a></td>
+<td class="verb10">9</td>
+<td class="verb10">7</td>
+<td class="verb10">14</td>
+<td class="verb10">15</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2630">Tenn. Martin</a></td>
+<td class="verb10">7</td>
+<td class="verb10">9</td>
+<td class="verb10">14</td>
+<td class="verb10">14</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2198">Eastern Kentucky</a></td>
+<td class="verb10">5</td>
+<td class="verb10">11</td>
+<td class="verb10">11</td>
+<td class="verb10">17</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2546">SE Missouri State</a></td>
+<td class="verb10">5</td>
+<td class="verb10">11</td>
+<td class="verb10">11</td>
+<td class="verb10">19</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2634">Tennessee State</a></td>

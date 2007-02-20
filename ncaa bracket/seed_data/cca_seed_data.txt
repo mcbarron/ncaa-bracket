@@ -1,0 +1,10 @@
+insert into team (id, name, conference_id) values(278, "Fresno State", 30);
+insert into team (id, name, conference_id) values(202, "Tulsa", 30);
+insert into team (id, name, conference_id) values(242, "Rice", 30);
+insert into team (id, name, conference_id) values(2440, "Nevada", 30);
+insert into team (id, name, conference_id) values(2567, "SMU", 30);
+insert into team (id, name, conference_id) values(062, "Hawaii", 30);
+insert into team (id, name, conference_id) values(2348, "Louisiana Tech", 30);
+insert into team (id, name, conference_id) values(068, "Boise State", 30);
+insert into team (id, name, conference_id) values(023, "San Jose State", 30);
+insert into team (id, name, conference_id) values(2638, "UTEP", 30);

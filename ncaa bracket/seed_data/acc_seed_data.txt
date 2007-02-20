@@ -1,0 +1,9 @@
+insert into team (id, name, conference_id) values (154, "Wake Forest", 2);
+insert into team (id, name, conference_id) values (150, "Duke", 2);
+insert into team (id, name, conference_id) values (120, "Maryland", 2);
+insert into team (id, name, conference_id) values (152, "N.C. State", 2);
+insert into team (id, name, conference_id) values (059, "Georgia Tech", 2);
+insert into team (id, name, conference_id) values (153, "North Carolina", 2);
+insert into team (id, name, conference_id) values (258, "Virginia", 2);
+insert into team (id, name, conference_id) values (228, "Clemson", 2);
+insert into team (id, name, conference_id) values (052, "Florida State", 2);

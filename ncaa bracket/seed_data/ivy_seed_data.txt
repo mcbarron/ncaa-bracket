@@ -1,0 +1,8 @@
+insert into team (id, name, conference_id) values(219, "Pennsylvania", 12);
+insert into team (id, name, conference_id) values(225, "Brown", 12);
+insert into team (id, name, conference_id) values(163, "Princeton", 12);
+insert into team (id, name, conference_id) values(043, "Yale", 12);
+insert into team (id, name, conference_id) values(108, "Harvard", 12);
+insert into team (id, name, conference_id) values(172, "Cornell", 12);
+insert into team (id, name, conference_id) values(159, "Dartmouth", 12);
+insert into team (id, name, conference_id) values(171, "Columbia", 12);

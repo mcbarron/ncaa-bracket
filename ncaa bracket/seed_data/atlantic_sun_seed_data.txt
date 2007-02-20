@@ -1,0 +1,12 @@
+insert into team (id, name, conference_id) values(2653, "Troy State", 46);
+insert into team (id, name, conference_id) values(2382, "Mercer", 46);
+insert into team (id, name, conference_id) values(2057, "Belmont", 46);
+insert into team (id, name, conference_id) values(2116, "Central Florida", 46);
+insert into team (id, name, conference_id) values(055, "Jacksonville St.", 46);
+insert into team (id, name, conference_id) values(2535, "Samford", 46);
+insert into team (id, name, conference_id) values(2247, "Georgia St", 46);
+insert into team (id, name, conference_id) values(294, "Jacksonville", 46);
+insert into team (id, name, conference_id) values(056, "Stetson", 46);
+insert into team (id, name, conference_id) values(2226, "Fla Atlantic", 46);
+insert into team (id, name, conference_id) values(2241, "Gardner Webb", 46);
+insert into team (id, name, conference_id) values(2097, "Campbell", 46);
