@@ -1,0 +1,12 @@
+insert into team (id, name, conference_id) values(2305, "Kansas", 8);
+insert into team (id, name, conference_id) values(251, "Texas", 8);
+insert into team (id, name, conference_id) values(201, "Oklahoma", 8);
+insert into team (id, name, conference_id) values(197, "Oklahoma State", 8);
+insert into team (id, name, conference_id) values(142, "Missouri", 8);
+insert into team (id, name, conference_id) values(038, "Colorado", 8);
+insert into team (id, name, conference_id) values(2641, "Texas Tech", 8);
+insert into team (id, name, conference_id) values(245, "Texas A&M", 8);
+insert into team (id, name, conference_id) values(066, "Iowa State", 8);
+insert into team (id, name, conference_id) values(239, "Baylor", 8);
+insert into team (id, name, conference_id) values(2306, "Kansas State", 8);
+insert into team (id, name, conference_id) values(158, "Nebraska", 8);

@@ -1,0 +1,11 @@
+insert into team (id, name, conference_id) values(2534, "Sam Houston St.", 25);
+insert into team (id, name, conference_id) values(2617, "Stephen F. Austin", 25);
+insert into team (id, name, conference_id) values(250, "Texas Arlington", 25);
+insert into team (id, name, conference_id) values(326, "SW Texas State", 25);
+insert into team (id, name, conference_id) values(2377, "McNeese State", 25);
+insert into team (id, name, conference_id) values(2320, "Lamar", 25);
+insert into team (id, name, conference_id) values(2433, "Louisiana Monroe", 25);
+insert into team (id, name, conference_id) values(2545, "SE Louisiana", 25);
+insert into team (id, name, conference_id) values(2636, "Tex San Antonio", 25);
+insert into team (id, name, conference_id) values(2466, "Northwestern St.", 25);
+insert into team (id, name, conference_id) values(2447, "Nicholls State", 25);

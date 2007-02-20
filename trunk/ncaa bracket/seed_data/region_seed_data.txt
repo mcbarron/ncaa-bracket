@@ -1,0 +1,4 @@
+insert into region (id, name) values(4,"East");
+insert into region (id, name) values(1,"Midwest");
+insert into region (id, name) values(3,"South");
+insert into region (id, name) values(2,"West");

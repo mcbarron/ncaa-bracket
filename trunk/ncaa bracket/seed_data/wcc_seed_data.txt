@@ -1,0 +1,8 @@
+insert into team (id, name, conference_id) values(2250, "Gonzaga", 29);
+insert into team (id, name, conference_id) values(301, "San Diego", 29);
+insert into team (id, name, conference_id) values(2539, "San Francisco", 29);
+insert into team (id, name, conference_id) values(2492, "Pepperdine", 29);
+insert into team (id, name, conference_id) values(2608, "St. Mary's (CA)", 29);
+insert into team (id, name, conference_id) values(2541, "Santa Clara", 29);
+insert into team (id, name, conference_id) values(2501, "Portland", 29);
+insert into team (id, name, conference_id) values(2351, "Loyola Marymnt", 29);

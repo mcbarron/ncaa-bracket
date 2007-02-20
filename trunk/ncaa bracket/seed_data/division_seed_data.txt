@@ -1,0 +1,99 @@
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=269">Marquette</a></td>
+<td class="verb10">14</td>
+<td class="verb10">2</td>
+<td class="verb10">23</td>
+<td class="verb10">5</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=097">Louisville</a></td>
+<td class="verb10">11</td>
+<td class="verb10">5</td>
+<td class="verb10">24</td>
+<td class="verb10">6</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2132">Cincinnati</a></td>
+<td class="verb10">9</td>
+<td class="verb10">7</td>
+<td class="verb10">17</td>
+<td class="verb10">11</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=139">St. Louis</a></td>
+<td class="verb10">9</td>
+<td class="verb10">7</td>
+<td class="verb10">16</td>
+<td class="verb10">13</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=305">DePaul</a></td>
+<td class="verb10">8</td>
+<td class="verb10">8</td>
+<td class="verb10">16</td>
+<td class="verb10">12</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2429">Charlotte</a></td>
+<td class="verb10">8</td>
+<td class="verb10">8</td>
+<td class="verb10">13</td>
+<td class="verb10">16</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=151">East Carolina</a></td>
+<td class="verb10">3</td>
+<td class="verb10">13</td>
+<td class="verb10">12</td>
+<td class="verb10">15</td>
+</tr>
+<tr bgColor=#ecece4 align=center>
+<td width=120 align=left class="verb10"><b>National</b></td>
+<td WIDTH=26 class="verb10"><b>W</b></td>
+<td WIDTH=26 class="verb10"><b>L</b></td>
+<td WIDTH=26 class="verb10"><b>W</b></td>
+<td WIDTH=26 class="verb10"><b>L</b></td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=235">Memphis</a></td>
+<td class="verb10">13</td>
+<td class="verb10">3</td>
+<td class="verb10">23</td>
+<td class="verb10">6</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=005">UAB</a></td>
+<td class="verb10">8</td>
+<td class="verb10">8</td>
+<td class="verb10">19</td>
+<td class="verb10">12</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2655">Tulane</a></td>
+<td class="verb10">8</td>
+<td class="verb10">8</td>
+<td class="verb10">16</td>
+<td class="verb10">15</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=058">South Florida</a></td>
+<td class="verb10">7</td>
+<td class="verb10">9</td>
+<td class="verb10">15</td>
+<td class="verb10">14</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=248">Houston</a></td>
+<td class="verb10">6</td>
+<td class="verb10">10</td>
+<td class="verb10">8</td>
+<td class="verb10">20</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2572">Southern Miss</a></td>
+<td class="verb10">5</td>
+<td class="verb10">11</td>
+<td class="verb10">13</td>
+<td class="verb10">16</td>
+</tr>
+<tr align=center bgColor=#ecece4>
+<td align=left class="verb10"><a href="http://sports.espn.go.com/ncaa/clubhouse?collegeId=2628">TCU</a></td>
