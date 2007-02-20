@@ -1,0 +1,12 @@
+insert into team (id, name, conference_id, division_id) values(2193, "East Tenn. St.", 24, 1);
+insert into team (id, name, conference_id, division_id) values(2026, "Appalachian St.", 24, 1);
+insert into team (id, name, conference_id, division_id) values(2166, "Davidson", 24, 1);
+insert into team (id, name, conference_id, division_id) values(2717, "Western Carolina", 24, 1);
+insert into team (id, name, conference_id, division_id) values(2678, "VMI", 24, 1);
+insert into team (id, name, conference_id, division_id) values(2430, "NC Greensboro", 24, 1);
+insert into team (id, name, conference_id, division_id) values(232, "Coll Of Charltn", 24, 2);
+insert into team (id, name, conference_id, division_id) values(236, "UT-Chattanooga", 24, 2);
+insert into team (id, name, conference_id, division_id) values(290, "Georgia Southern", 24, 2);
+insert into team (id, name, conference_id, division_id) values(2747, "Wofford", 24, 2);
+insert into team (id, name, conference_id, division_id) values(231, "Furman", 24, 2);
+insert into team (id, name, conference_id, division_id) values(2643, "The Citadel", 24, 2);

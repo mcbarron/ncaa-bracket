@@ -1,0 +1,8 @@
+insert into team (id, name, conference_id) values(107, "Holy Cross", 22);
+insert into team (id, name, conference_id) values(044, "American", 22);
+insert into team (id, name, conference_id) values(2142, "Colgate", 22);
+insert into team (id, name, conference_id) values(2329, "Lehigh", 22);
+insert into team (id, name, conference_id) values(2083, "Bucknell", 22);
+insert into team (id, name, conference_id) values(322, "Lafayette", 22);
+insert into team (id, name, conference_id) values(2426, "Navy", 22);
+insert into team (id, name, conference_id) values(349, "Army", 22);

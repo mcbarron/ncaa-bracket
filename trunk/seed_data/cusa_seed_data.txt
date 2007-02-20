@@ -1,0 +1,14 @@
+insert into team (id, name, conference_id, division_id) values(269, "Marquette", 11, 5);
+insert into team (id, name, conference_id, division_id) values(097, "Louisville", 11, 5);
+insert into team (id, name, conference_id, division_id) values(2132, "Cincinnati", 11, 5);
+insert into team (id, name, conference_id, division_id) values(139, "St. Louis", 11, 5);
+insert into team (id, name, conference_id, division_id) values(305, "DePaul", 11, 5);
+insert into team (id, name, conference_id, division_id) values(2429, "Charlotte", 11, 5);
+insert into team (id, name, conference_id, division_id) values(151, "East Carolina", 11, 5);
+insert into team (id, name, conference_id, division_id) values(235, "Memphis", 11, 6);
+insert into team (id, name, conference_id, division_id) values(005, "UAB", 11, 6);
+insert into team (id, name, conference_id, division_id) values(2655, "Tulane", 11, 6);
+insert into team (id, name, conference_id, division_id) values(058, "South Florida", 11, 6);
+insert into team (id, name, conference_id, division_id) values(248, "Houston", 11, 6);
+insert into team (id, name, conference_id, division_id) values(2572, "Southern Miss", 11, 6);
+insert into team (id, name, conference_id, division_id) values(2628, "TCU", 11, 6);
