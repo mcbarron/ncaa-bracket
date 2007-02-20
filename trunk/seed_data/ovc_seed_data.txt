@@ -1,9 +1,0 @@
-insert into team (id, name, conference_id) values(2046, "Austin Peay", 20);
-insert into team (id, name, conference_id) values(2413, "Morehead State", 20);
-insert into team (id, name, conference_id) values(2635, "Tennessee Tech", 20);
-insert into team (id, name, conference_id) values(093, "Murray State", 20);
-insert into team (id, name, conference_id) values(2197, "Eastern Illinois", 20);
-insert into team (id, name, conference_id) values(2630, "Tenn. Martin", 20);
-insert into team (id, name, conference_id) values(2198, "Eastern Kentucky", 20);
-insert into team (id, name, conference_id) values(2546, "SE Missouri State", 20);
-insert into team (id, name, conference_id) values(2634, "Tennessee State", 20);

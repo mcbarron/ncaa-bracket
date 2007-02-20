@@ -1,8 +1,0 @@
-insert into team (id, name, conference_id) values(2674, "Valparaiso", 15);
-insert into team (id, name, conference_id) values(2473, "Oakland", 15);
-insert into team (id, name, conference_id) values(085, "Indiana Purdue", 15);
-insert into team (id, name, conference_id) values(198, "Oral Roberts", 15);
-insert into team (id, name, conference_id) values(140, "UMKC", 15);
-insert into team (id, name, conference_id) values(253, "Southern Utah", 15);
-insert into team (id, name, conference_id) values(2710, "Western Illinois", 15);
-insert into team (id, name, conference_id) values(2130, "Chicago St", 15);

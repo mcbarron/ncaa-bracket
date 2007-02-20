@@ -1,9 +1,0 @@
-insert into team (id, name, conference_id) values (104, "Boston U.", 1);
-insert into team (id, name, conference_id) values (261, "Vermont", 1);
-insert into team (id, name, conference_id) values (042, "Hartford", 1);
-insert into team (id, name, conference_id) values (2066, "Binghamton", 1);
-insert into team (id, name, conference_id) values (111, "Northeastern", 1);
-insert into team (id, name, conference_id) values (311, "Maine", 1);
-insert into team (id, name, conference_id) values (2619, "Stony Brook", 1);
-insert into team (id, name, conference_id) values (399, "Albany", 1);
-insert into team (id, name, conference_id) values (160, "New Hampshire", 1);

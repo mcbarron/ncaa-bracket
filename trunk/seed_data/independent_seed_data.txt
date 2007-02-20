@@ -1,7 +1,0 @@
-insert into team (id, name, conference_id) values(2113, "Centenary", 43);
-insert into team (id, name, conference_id) values(357, "TX A&M Corp Chris", 43);
-insert into team (id, name, conference_id) values(292, "Tx Pan American", 43);
-insert into team (id, name, conference_id) values(2870, "IPFW", 43);
-insert into team (id, name, conference_id) values(288, "David Lipscomb",  43);
-insert into team (id, name, conference_id) values(2417, "Morris Brown",  43);
-insert into team (id, name, conference_id) values(2542, "Savannah State",  43);

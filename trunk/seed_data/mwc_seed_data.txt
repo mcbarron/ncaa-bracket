@@ -1,8 +1,0 @@
-insert into team (id, name, conference_id) values(254, "Utah", 44);
-insert into team (id, name, conference_id) values(252, "BYU", 44);
-insert into team (id, name, conference_id) values(2439, "UNLV", 44);
-insert into team (id, name, conference_id) values(2751, "Wyoming", 44);
-insert into team (id, name, conference_id) values(021, "San Diego State", 44);
-insert into team (id, name, conference_id) values(036, "Colorado State", 44);
-insert into team (id, name, conference_id) values(167, "New Mexico", 44);
-insert into team (id, name, conference_id) values(2005, "Air Force", 44);

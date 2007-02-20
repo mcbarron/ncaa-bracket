@@ -1,8 +1,0 @@
-insert into team (id, name, conference_id) values(2692, "Weber State", 5);
-insert into team (id, name, conference_id) values(331, "Eastern Wash.", 5);
-insert into team (id, name, conference_id) values(304, "Idaho State", 5);
-insert into team (id, name, conference_id) values(149, "Montana", 5);
-insert into team (id, name, conference_id) values(2464, "Northern Arizona", 5);
-insert into team (id, name, conference_id) values(016, "Sacramento State", 5);
-insert into team (id, name, conference_id) values(147, "Montana State", 5);
-insert into team (id, name, conference_id) values(2502, "Portland State", 5);
