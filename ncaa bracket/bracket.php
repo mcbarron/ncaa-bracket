@@ -21,6 +21,7 @@ sajax_handle_client_request();
 .yui-overlay { position: absolute; top: 0; left: 0; border: 1px solid #000; background-color: #fff; padding: 4px; margin: 10px; width: 450px; }
 .yui-overlay .hd { background: #ddd; padding: 3px; }
 .yui-overlay .bd { padding: 3px; height: 300px; overflow: auto; }
+.yui-overlay .ft { padding: 3px; }
 </style>
 
 <script type="text/javascript" src="/js/yui/yahoo-dom-event.js"></script>
@@ -109,22 +110,34 @@ function saveBP(bp, seed) {
     teamsOverlay.cfg.setProperty('context', ['bp_' + bp, 'tr', 'tl']);
   }
   teamsOverlay.cfg.setProperty('visible', true);
+  teamList.scrollTop = 0;
 }
 
-var teamsOverlay;
+var teamsOverlay, teamList;
 YAHOO.util.Event.addListener(window, 'load', function() {
+  teamList = document.getElementById('teamList');
   teamsOverlay = new YAHOO.widget.Overlay('teamsOverlay', { visible: false, constraintoviewport: true });
   teamsOverlay.render();
 
-  YAHOO.util.Event.addListener('teamsOverlay', 'click', teamsOverlay.hide, teamsOverlay, true);
+//  YAHOO.util.Event.addListener('teamsOverlay', 'click', teamsOverlay.hide, teamsOverlay, true);
   
   // wire up all the teams in the list
   var teams = YAHOO.util.Dom.getElementsByClassName('teamLink', 'a');
   for (var i = 0, len = teams.length; i < len; i++) {
     teams[i].onclick = function() {
-      this.parentNode.removeChild(this);
-      document.getElementById( 'bp_' + currentBP ).innerHTML = this.innerHTML;
       teamsOverlay.cfg.setProperty('visible', false);
+      document.getElementById( 'bp_' + currentBP ).innerHTML = this.innerHTML;
+      this.parentNode.removeChild(this);
+      return false;
+    }
+  }
+
+  // wire up all the letters
+  var teams = YAHOO.util.Dom.getElementsByClassName('letterLink', 'a');
+  for (var i = 0, len = teams.length; i < len; i++) {
+    teams[i].onclick = function() {
+      var letterList = document.getElementById(this.innerHTML + '-teams');
+      teamList.scrollTop = letterList.offsetTop - 48; // where did 48 come from?
       return false;
     }
   }
@@ -181,7 +194,7 @@ closeDBConnection($link);
 </form>
 <div id="teamsOverlay" style="visibility:hidden">
   <div class="hd"></div>
-  <div class="bd">
+  <div id="teamList" class="bd">
   <?php
   $start = ""; 
   foreach ($teamsArray as $letter => $teams) {
@@ -207,6 +220,15 @@ closeDBConnection($link);
       $start = $letter;
     endif;
   }
+  ?>
+  </div>
+  <div class="ft">
+  <?php
+  foreach (range('A','Z') as $letter):
+    ?>
+    <a class="letterLink" href="#"><?php echo $letter ?></a>
+    <?php
+  endforeach;
   ?>
   </div>
 </div>
