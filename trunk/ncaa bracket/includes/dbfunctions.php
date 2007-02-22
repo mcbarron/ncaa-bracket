@@ -1,11 +1,11 @@
 <?php
 
-function connectToDB($server="localhost", $userid="root", $password="rootwdp", $dbName="ncaa_tourney_pool")
+function connectToDB($server="damian", $userid="bracket", $password="bracket", $dbName="ncaa_bracket")
 {
   global $link;
 	/* Connecting, selecting database */
 	$link = mysql_connect($server, $userid, $password)
-	or die("Could not connect");
+	or die(mysql_error());
 	mysql_select_db($dbName) or die("Could not select database");
 	return $link;
 }

@@ -1,21 +1,16 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<HTML><HEAD><TITLE>IU Hoops.com - Teams</TITLE>
-<META http-equiv=Content-Type content="text/html; charset=windows-1252">
-
 <?php
 require('./includes/class_def.php');
 require('./includes/dbfunctions.php');
 
 $link = connectToDB();
 
-?>
-
+?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head><title>IU Hoops.com - Teams</title>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 
 <script language="JavaScript">
-
-function setElementValue(id, value)
-{
-
+function setElementValue(id, value) {
    element = document.getElementById(id);
    if(element != null)
        element.value = value;
@@ -24,24 +19,17 @@ function setElementValue(id, value)
 }
 
 
- function getSelection()
- {
+function getSelection() {
 	var sTeam;
 	if ("TD" == event.srcElement.tagName)
 	    if ("" != event.srcElement.innerText)
 		  sTeam = event.srcElement.id + ":" + event.srcElement.innerText;
     setElementValue("ret", sTeam);
     window.close();
- }
+}
 
 </script>
 <STYLE type=text/css>
-TABLE
-{
-
-}
-
-
 TH.header
 {
 	font: italic small-caps bold 14px/17px "arial black";
