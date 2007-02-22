@@ -113,7 +113,7 @@ function saveBP(bp, seed) {
 
 var teamsOverlay;
 YAHOO.util.Event.addListener(window, 'load', function() {
-  teamsOverlay = new YAHOO.widget.Overlay('teamsOverlay', { visible: false });
+  teamsOverlay = new YAHOO.widget.Overlay('teamsOverlay', { visible: false, constraintoviewport: true });
   teamsOverlay.render();
 
   YAHOO.util.Event.addListener('teamsOverlay', 'click', teamsOverlay.hide, teamsOverlay, true);
