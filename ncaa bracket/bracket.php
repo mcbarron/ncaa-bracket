@@ -17,132 +17,30 @@ sajax_handle_client_request();
 <head>
 <title>NCAA Bracket</title>
 <link rel="stylesheet" type="text/css" href="./includes/bracket.css">
+<link rel="stylesheet" type="text/css" href="./includes/container.css">
 <style type="text/css">
-.yui-overlay { position: absolute; top: 0; left: 0; border: 1px solid #000; background-color: #fff; padding: 4px; margin: 10px; width: 450px; }
-.yui-overlay .hd { background: #ddd; padding: 3px; }
-.yui-overlay .bd { padding: 3px; height: 300px; overflow: auto; }
-.yui-overlay .ft { padding: 3px; }
+.yui-panel .hd { background: #ddd; padding: 3px; }
+.yui-panel .bd { padding: 3px; height: 300px; overflow: auto; }
+.yui-panel .ft { border-top: 1px solid #000; padding: 3px; }
+
+.yui-panel .ft a { color: blue; text-decoration: none; }
+.yui-panel .ft a:hover { color: green; }
+
+#teamsPanel_c { position: aboslute; top: 0; left: 0 }
+#teamList h3 { padding: 0; margin: 5px 0 7px 0; }
 </style>
 
-<script type="text/javascript" src="/js/yui/yahoo-dom-event.js"></script>
-<script type="text/javascript" src="/js/yui/container.js"></script>
+<script type="text/javascript" src="./js/yui/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="./js/yui/animation.js"></script>
+<script type="text/javascript" src="./js/yui/dragdrop.js"></script>
+<script type="text/javascript" src="./js/yui/container.js"></script>
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/bracket.js"></script>
 
 <script type="text/javascript">
 <?php
 sajax_show_javascript();
 ?>
-
-
-function do_saveBracketPosition_cb(data) 
-{
-	alert("Got here");
-}
-
-function do_saveBracketPosition(bp, teamId, year) 
-{
-	x_saveBracketPosition(bp, teamId, year, do_saveBracketPosition_cb);
-}
-
-function getElementValue(id)
-{
-   element = document.getElementById(id);
-   if(element != null)
-       return element.value;
-   else
-   {
-       alert("Field " + id + " could not be found.");
-       return "";
-   }
-}
-
-function setElementValue(id, value)
-{
-   element = document.getElementById(id);
-   if(element != null)
-       element.value = value;
-   else
-       alert("Field " + id + " could not be found.");
-}
-
-function saveBP2(bp, seed)
-{
-    var sRtn;
-    var index;
-    var name;
-    var teamId;
-    var id;
-    var field;
-    var label;
-    var elTarget;
-    
-    elTarget = document.getElementById(bp);
-
-  if (window.showModalDialog)
-  {    
-    // Open a popup dialog to help the user find a college quicker.
-    sRtn = showModalDialog("teams.php","","center=yes;dialogWidth=450pt;dialogHeight=200pt");
-  }
-  else
-   	sRtn = window.open('teams.php','','height=200,width=450,toolbar=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,modal=yes');
-
-  if (sRtn!="")
-  {
-     index = sRtn.indexOf(":");
-     index++;
-     name = sRtn.substring(index, sRtn.length);
-     index--;
-     teamId = sRtn.substring(0, index);
-     label = seed + " - " + name;
-     elTarget.replaceAdjacentText("afterBegin", label);
-     do_saveBP(bp, teamId, "");
-   }
-	else
-	  alert(name + " already exists on the bracket.");
-}
-
-var currentBP;
-function saveBP(bp, seed) {
-  currentBP = bp;
-  teamsOverlay.setHeader('Choose:');
-  if (32 >= bp) {
-    teamsOverlay.cfg.setProperty('context', ['bp_' + bp, 'tl', 'tr']);
-  } else {
-    teamsOverlay.cfg.setProperty('context', ['bp_' + bp, 'tr', 'tl']);
-  }
-  teamsOverlay.cfg.setProperty('visible', true);
-  teamList.scrollTop = 0;
-}
-
-var teamsOverlay, teamList;
-YAHOO.util.Event.addListener(window, 'load', function() {
-  teamList = document.getElementById('teamList');
-  teamsOverlay = new YAHOO.widget.Overlay('teamsOverlay', { visible: false, constraintoviewport: true });
-  teamsOverlay.render();
-
-//  YAHOO.util.Event.addListener('teamsOverlay', 'click', teamsOverlay.hide, teamsOverlay, true);
-  
-  // wire up all the teams in the list
-  var teams = YAHOO.util.Dom.getElementsByClassName('teamLink', 'a');
-  for (var i = 0, len = teams.length; i < len; i++) {
-    teams[i].onclick = function() {
-      teamsOverlay.cfg.setProperty('visible', false);
-      document.getElementById( 'bp_' + currentBP ).innerHTML = this.innerHTML;
-      this.parentNode.removeChild(this);
-      return false;
-    }
-  }
-
-  // wire up all the letters
-  var teams = YAHOO.util.Dom.getElementsByClassName('letterLink', 'a');
-  for (var i = 0, len = teams.length; i < len; i++) {
-    teams[i].onclick = function() {
-      var letterList = document.getElementById(this.innerHTML + '-teams');
-      teamList.scrollTop = letterList.offsetTop - 48; // where did 48 come from?
-      return false;
-    }
-  }
-});
-
 </script>
 </head>
 <body>
@@ -192,35 +90,63 @@ closeDBConnection($link);
 ?>
 
 </form>
-<div id="teamsOverlay" style="visibility:hidden">
+<div id="teamsPanel" style="visibility:hidden">
   <div class="hd"></div>
-  <div id="teamList" class="bd">
-  <?php
-  $start = ""; 
-  foreach ($teamsArray as $letter => $teams) {
-    if ($letter != $start):
-      ?>
-      <div id="<?php echo $letter ?>-teams">
-      <h3><?php echo $letter ?></h3>
+  <div id="teamList" class="bd" style="position: relative;">
+    <div id="teamListAM" style="width: 45%; position: relative;">
       <?php
-    endif;
-    
-    if (null != $teams) {
-      foreach ($teams as $team): 
-        ?>
-        <div><a class="teamLink" href="#"><?php echo $team->name; ?></a></div>
-        <?php
-      endforeach;
-    }
-    
-    if ($letter != $start):
+      $start = "";
+      foreach (range('A','M') as $letter) {
+        if ($letter != $start):
+          ?>
+          <div id="<?php echo $letter ?>-teams">
+          <h3><?php echo $letter ?></h3>
+          <?php
+        endif;
+        
+        foreach ($teamsArray[$letter] as $team): 
+          ?>
+          <div><a class="teamLink" href="#"><?php echo $team->name; ?></a></div>
+          <?php
+        endforeach;
+
+        if ($letter != $start):
+          ?>
+          </div> <!-- end <?php echo $letter ?>-teams -->
+          <?php
+          $start = $letter;
+        endif;
+      }
       ?>
-      </div> <!-- end <?php echo $letter ?>-teams -->
+    </div>
+    <div id="teamListNZ" style="width: 45%; position: absolute; top: 0; right: 0">
       <?php
-      $start = $letter;
-    endif;
-  }
-  ?>
+      $start = "";
+      foreach (range('N','Z') as $letter) {
+        if ($letter != $start):
+          ?>
+          <div id="<?php echo $letter ?>-teams">
+          <h3><?php echo $letter ?></h3>
+          <?php
+        endif;
+        
+        if (null != $teamsArray[$letter]) {
+          foreach ($teamsArray[$letter] as $team): 
+            ?>
+            <div><a class="teamLink" href="#"><?php echo $team->name; ?></a></div>
+            <?php
+          endforeach;
+        }
+
+        if ($letter != $start):
+          ?>
+          </div> <!-- end <?php echo $letter ?>-teams -->
+          <?php
+          $start = $letter;
+        endif;
+      }
+      ?>
+    </div>
   </div>
   <div class="ft">
   <?php
