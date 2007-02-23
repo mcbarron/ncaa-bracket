@@ -78,7 +78,7 @@ TD.middleRight
 
 </STYLE>
 </HEAD>
-<BODY>
+
 <TABLE cellspacing=0 id="bracket_table">
 <TR>
 <TH class="header" colspan="17">IUHOOPS.COM</TH>
@@ -890,7 +890,7 @@ TD.middleRight
 <!-- SEED 12 BOTTOM 22/54-->
 <TR>
 <TD class="space">&nbsp;</TD>
-<TD class="evenLeft"><?php echo $bracketPosition_22; ?></TD>
+<TD class="evenLeft"><?php echo "<span class=\"$class_22\" id=\"$bp_22\" onclick=\"$onClick_22\" onmouseover=\"$onMouseOver_22\" onmouseout=\"$onMouseOut_22\">$data_22</span>" ?></TD>
 <TD class="middleLeft">&nbsp;</TD>
 <TD class="middleLeft">&nbsp;</TD>
 <TD class="middleLeft">&nbsp;</TD>
