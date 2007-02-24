@@ -9,6 +9,7 @@ require('./includes/sajax/Sajax.php');
 require('./includes/dbfunctions.php');
 
 sajax_init();
+//$sajax_debug_mode = 1;
 sajax_export("saveBracketPosition");
 sajax_handle_client_request();
 
@@ -50,38 +51,36 @@ sajax_show_javascript();
 /* Get DB Connection */
 $link = connectToDB();
 
+$currentBracket = getBracket($year);
 $teamsArray = getTeamsByAlpha();
 $results = getPositionSeeds();
 
 for($index=1; $index<=64; $index++)
 {
-	${"bp_".$index} = "bp_".$index;
-	$temp_data = "data_$index";
-	$data = ($results[$index] == null)? ("&nbsp;"):($results[$index]);
-	$$temp_data = "Set #$data";
-	$temp_onClick = "onClick_$index";
-	$$temp_onClick = "$SAVE_BP_CLICK($index, $data)";
-	$temp_onMouseOver = "onMouseOver_$index";
-	$$temp_onMouseOver = $ACTIVE_MOUSE_OVER;
-	$temp_onMouseOut = "onMouseOut_$index";
-	$$temp_onMouseOut = $ACTIVE_MOUSE_OUT;
-	$temp_class = "class_$index";
-	$$temp_class = $DEFAULT_TEAM_CLASS;
+  $seed = $results[$index];
+  if (isset($currentBracket[$index])) {
+    $name = str_replace("State", "St", $currentBracket[$index]);
+    
+    ${"bp_$index"} = "bp_".$index;
+    ${"data_$index"} = "($seed) $name";
+  } else {
+  	${"bp_$index"} = "bp_$index";
+  	${"data_$index"} = "Set #".($seed == null ? "&nbsp;" : $seed);
+  	${"onClick_$index"} = "$SAVE_BP_CLICK($index, $seed)";
+  	${"onMouseOver_$index"} = $ACTIVE_MOUSE_OVER;
+  	${"onMouseOut_$index"} = $ACTIVE_MOUSE_OUT;
+  	${"class_$index"} = $DEFAULT_TEAM_CLASS;
+  }
 }
 
 for($index=65; $index<=127; $index++)
 {
-	${"bp_".$index} = "bp_".$index;
-	$temp_data = "data_$index";
-	$$temp_data = ($results[$index] == null)? ("&nbsp;"):($results[$index]);
-	$temp_onClick = "onClick_$index";
-	$$temp_onClick = $NO_ON_CLICK;
-	$temp_onMouseOver = "onMouseOver_$index";
-	$$temp_onMouseOver = $NO_MOUSE_OVER;
-	$temp_onMouseOut = "onMouseOut_$index";
-	$$temp_onMouseOut = $NO_MOUSE_OUT;
-	$temp_class = "class_$index";
-	$$temp_class = $DEFAULT_TEAM_CLASS;
+	${"bp_$index"} = "bp_$index";
+	${"data_$index"} = ($results[$index] == null)? ("&nbsp;"):($results[$index]);
+	${"onClick_$index"} = $NO_ON_CLICK;
+	${"onMouseOver_$index"} = $NO_MOUSE_OVER;
+	${"onMouseOut_$index"} = $NO_MOUSE_OUT;
+	${"class_$index"} = $DEFAULT_TEAM_CLASS;
 }
 
 require('./includes/bracket_template.inc');
@@ -106,7 +105,7 @@ closeDBConnection($link);
         
         foreach ($teamsArray[$letter] as $team): 
           ?>
-          <div><a class="teamLink" href="#"><?php echo $team->name; ?></a></div>
+          <div><a id="team-<?php echo $team->id ?>" class="teamLink" href="#"><?php echo $team->name; ?></a></div>
           <?php
         endforeach;
 
@@ -133,7 +132,7 @@ closeDBConnection($link);
         if (null != $teamsArray[$letter]) {
           foreach ($teamsArray[$letter] as $team): 
             ?>
-            <div><a class="teamLink" href="#"><?php echo $team->name; ?></a></div>
+            <div><a id="team-<?php echo $team->id ?>" class="teamLink" href="#"><?php echo $team->name; ?></a></div>
             <?php
           endforeach;
         }
