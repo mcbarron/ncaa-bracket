@@ -2,11 +2,9 @@
 
 function connectToDB($server="damian", $userid="bracket", $password="bracket", $dbName="ncaa_bracket")
 {
-  global $link;
-	/* Connecting, selecting database */
-	$link = mysql_connect($server, $userid, $password)
-	or die(mysql_error());
-	mysql_select_db($dbName) or die("Could not select database");
+  /* Connecting, selecting database */
+	$link = mysql_connect($server, $userid, $password) or die(mysql_error());
+	mysql_select_db($dbName) or die(mysql_error());
 	return $link;
 }
 
@@ -15,14 +13,15 @@ function closeDBConnection($link)
 	mysql_close($link);
 }
 
-function getTeamsByLetter($letter)
+function getTeamsByLetter($letter, $exclude = false)
 {
-	$query = "select a.id as team_id, a.name as team_name,
-                       b.id as conf_id, b.name as conf_name, c.name as division_name
-                from team a, conference b, division c
-                where a.name like \"$letter%\"
-                and a.conference_id = b.id
-              group by a.name asc;";
+  $year = date("Y");
+  $query = "select a.id as team_id, a.name as team_name, b.id as conf_id, b.name as conf_name, c.name as division_name
+      from team a, conference b, division c
+      where a.name like \"$letter%\"
+        and a.conference_id = b.id";
+  if ($exclude) $query .= " and a.id not in (select team_id from bracket where year = $year)";
+  $query .= " group by a.name asc;";
 
 	$resultsDB = mysql_query($query) or die(mysql_error() . "SQL: " . $query);
 
@@ -66,12 +65,10 @@ function getTeam($id)
 
 function getTeamsByAlpha()
 {
-
-	$letters = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
-	'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+	$letters = range('A', 'Z');
 
 	foreach($letters as $letter)
-	$result[$letter] = getTeamsByLetter($letter);
+  	$result[$letter] = getTeamsByLetter($letter, true);
 
 	return $result;
 }
@@ -98,7 +95,6 @@ function getBracket($year)
 	while($row = mysql_fetch_array($bpInfoDB, 1))
 		$result[($row["bracket_position"])] = $row["name"];
 
-	mysql_free_result($bpInfoDB);	
 	return $result;
 }
 
@@ -212,10 +208,7 @@ function buildPositionElement($row)
  */
 function saveBracketPosition($bracket_position, $team_id, $year)
 {
-  global $link;
-
-	if($link == null)
-		$link = connectToDB();
+	$link = connectToDB();
 
 	if($year == "")
 		$year = date("Y");
@@ -224,10 +217,10 @@ function saveBracketPosition($bracket_position, $team_id, $year)
 					from bracket 
 					where year = \"$year\" 
 				      and team_id = $team_id
-                      and bracket_position = $bracket_position", 
+              and bracket_position = $bracket_position", 
 	$link);
 	 
-	if(mysql_num_rows($resultDB) > 0)
+	if (null != $resultDB && mysql_num_rows($resultDB) > 0)
 		return "Team has already exists in the bracket for $year.";
 
 	$result = mysql_query("select *
@@ -245,8 +238,6 @@ function saveBracketPosition($bracket_position, $team_id, $year)
 					where year = \"$year\"
 					and bracket_position = $bracket_position";
 	
-	mysql_free_result($resultDB);
-		
 	return mysql_query($stmt);
 }
 
