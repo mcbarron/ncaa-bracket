@@ -1,6 +1,8 @@
+var year = new Date().getFullYear();
+
 function do_saveBracketPosition_cb(data) 
 {
-	alert("Got here");
+	if (!data) alert (data);
 }
 
 function do_saveBracketPosition(bp, teamId, year) 
@@ -29,42 +31,6 @@ function setElementValue(id, value)
        alert("Field " + id + " could not be found.");
 }
 
-function saveBP2(bp, seed)
-{
-    var sRtn;
-    var index;
-    var name;
-    var teamId;
-    var id;
-    var field;
-    var label;
-    var elTarget;
-    
-    elTarget = document.getElementById(bp);
-
-  if (window.showModalDialog)
-  {    
-    // Open a popup dialog to help the user find a college quicker.
-    sRtn = showModalDialog("teams.php","","center=yes;dialogWidth=450pt;dialogHeight=200pt");
-  }
-  else
-   	sRtn = window.open('teams.php','','height=200,width=450,toolbar=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,modal=yes');
-
-  if (sRtn!="")
-  {
-     index = sRtn.indexOf(":");
-     index++;
-     name = sRtn.substring(index, sRtn.length);
-     index--;
-     teamId = sRtn.substring(0, index);
-     label = seed + " - " + name;
-     elTarget.replaceAdjacentText("afterBegin", label);
-     do_saveBP(bp, teamId, "");
-   }
-	else
-	  alert(name + " already exists on the bracket.");
-}
-
 var currentBP, currentSeed;
 function saveBP(bp, seed) {
   currentBP = bp;
@@ -87,18 +53,17 @@ $(function() {
   teamsPanel.render();
 
   // wire up all the teams in the list
-  $('.teamLink').each( function() {
-  	$(this).click( function() {
-      teamsPanel.cfg.setProperty('visible', false);
-      $('#bp_' + currentBP).text($(this).text() + " (" + currentSeed + ")");
-      $(this).remove();
-      return false;
-  	});
+  $('a.teamLink').click( function(event) {
+    teamsPanel.cfg.setProperty('visible', false);
+    $('#bp_' + currentBP).text("(" + currentSeed + ") " + $(this).text());
+    do_saveBracketPosition(currentBP, this.id.split('-')[1], year);
+    $(this).remove();
+    return false;
   });
   
   // wire up all the letters to scroll the box
-  $('.letterLink').click( function() {
-    teamList.scrollTop = $('#' + $(this).text() + '-teams')[0].offsetTop - 48; // where did 48 come from?
+  $('a.letterLink').click( function(event) {
+    teamList.scrollTop = $('#' + $(this).text() + '-teams:first')[0].offsetTop - 48; // where did 48 come from?
     return false;
   });
 });
